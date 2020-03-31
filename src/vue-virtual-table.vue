@@ -426,7 +426,7 @@
                           "
                           >{{ props.item[item.prop] }}</span
                         >
-                        <slot :name="props.item.slot" v-else-if="props.item.slot" :index="props.itemIndex"
+                        <slot :name="item.slot" v-else-if="item.slot" :index="props.itemIndex"
                           :row="clearObj(props.item)" :data="props.item[item.prop]" :prop="item.prop" />
                         <span
                           v-else-if="item.eClass"
