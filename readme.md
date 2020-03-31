@@ -1,3 +1,5 @@
+This is a fork to support custom rendering slots
+
 # vue-virtual-table
 
 [![npm version](https://badge.fury.io/js/vue-virtual-table.svg)](https://badge.fury.io/js/vue-virtual-table)
