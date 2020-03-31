@@ -426,21 +426,21 @@
                           "
                           >{{ props.item[item.prop] }}</span
                         >
-                       
+                        <slot v-else-if="item.slot" :name="item.slot" :index="props.itemIndex"
+                          :row="clearObj(props.item)" :data="props.item[item.prop]" :prop="item.prop" />
                         <span
                           v-else-if="item.eClass"
                           :class="props.item._eClass[item.prop]"
                           >{{ props.item[item.prop] }}</span
                         >
-                        <span v-else>XYZ {{ props.item[item.prop] }} XYZ</span>
+                        <span v-else>{{ props.item[item.prop] }}</span>
                         <span
                           v-if="item.suffix && props.item[item.prop]"
                           :class="props.item._eClass[item.prop] || ''"
                           class="suffix"
                           >{{ item.suffix }}</span
                         >
-                         <slot :name="item.slot" :index="props.itemIndex"
-                          :row="clearObj(props.item)" :data="props.item[item.prop]" :prop="item.prop" />
+                        
                       </span>
                       <template #popover>
                         <div
@@ -522,6 +522,8 @@
                       :class="props.item._eClass[item.prop]"
                       >{{ props.item[item.prop] }}</span
                     >
+                     <slot v-else-if="item.slot" :name="item.slot" :index="props.itemIndex"
+                          :row="clearObj(props.item)" :data="props.item[item.prop]" :prop="item.prop" />
                     <span v-else>{{ props.item[item.prop] }}</span>
                     <span
                       v-if="item.suffix && props.item[item.prop]"
