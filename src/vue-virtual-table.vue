@@ -1084,6 +1084,10 @@ export default {
         "changeSelection",
         self.dataInitTemp.filter(v => v._eSelected === true)
       );
+      self.$emit(
+        "click",
+        item
+      );
     },
     handleClickConfirmFilter(index) {
       let self = this;
