@@ -645,9 +645,9 @@ export default {
       }
     },
     selectedTag: {
-      type: String,
+      type: Object,
       default: function() {
-        return ""
+        return null
       }
     },
     itemHeight: {
