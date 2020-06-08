@@ -424,16 +424,16 @@
                             item.filterTag[props.item[item.prop]] ||
                               'defaultTag'
                           "
-                          >{{ props.item[item.prop] }}</span
+                          >{{ item.transform ? item.transform(props.item[item.prop]) : props.item[item.prop] }}</span
                         >
                         <slot v-else-if="item.slot" :name="item.slot" :index="props.itemIndex"
                           :row="clearObj(props.item)" :data="props.item[item.prop]" :prop="item.prop" />
                         <span
                           v-else-if="item.eClass"
                           :class="props.item._eClass[item.prop]"
-                          >{{ props.item[item.prop] }}</span
+                          >{{ item.transform ? item.transform(props.item[item.prop]) : props.item[item.prop] }}</span
                         >
-                        <span v-else>{{ props.item[item.prop] }}</span>
+                        <span v-else>{{ item.transform ? item.transform(props.item[item.prop]) : props.item[item.prop] }}</span>
                         <span
                           v-if="item.suffix && props.item[item.prop]"
                           :class="props.item._eClass[item.prop] || ''"
@@ -515,16 +515,16 @@
                       :class="
                         item.filterTag[props.item[item.prop]] || 'defaultTag'
                       "
-                      >{{ props.item[item.prop] }}</span
+                      >{{ item.transform ? item.transform(props.item[item.prop]) : props.item[item.prop] }}</span
                     >
                     <span
                       v-else-if="item.eClass"
                       :class="props.item._eClass[item.prop]"
-                      >{{ props.item[item.prop] }}</span
+                      >{{ item.transform ? item.transform(props.item[item.prop]) : props.item[item.prop] }}</span
                     >
                      <slot v-else-if="item.slot" :name="item.slot" :index="props.itemIndex"
                           :row="clearObj(props.item)" :data="props.item[item.prop]" :prop="item.prop" />
-                    <span v-else>{{ props.item[item.prop] }}</span>
+                    <span v-else>{{ item.transform ? item.transform(props.item[item.prop]) : props.item[item.prop] }}</span>
                     <span
                       v-if="item.suffix && props.item[item.prop]"
                       :class="props.item._eClass[item.prop] || ''"
