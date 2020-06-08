@@ -347,7 +347,7 @@
               @click="handleClickItem(props.item)"
               :class="{
                 selected: props.item._eSelected,
-                active: isSelected(props.item),
+                active: props.item._eTag == selectedTag,
                 unselectable: !selectable,
                 'item-line-allow-hightlight': hoverHighlight
               }"
@@ -644,9 +644,11 @@ export default {
         return [];
       }
     },
-    isSelected: {
-      type: Function,
-      default: function(item) {return false}
+    selectedTag: {
+      type: String,
+      default: function() {
+        return ""
+      }
     },
     itemHeight: {
       type: Number,
