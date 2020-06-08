@@ -41,6 +41,10 @@ export function JSONtoCSV(arr, columns, delimiter = ',') {
 
 export function deepCopy(obj) {
   let obj_cp = JSON.parse(JSON.stringify(obj))
+  // keep transform functions
+  if(obj.transform) {
+    obj_cp.transform = transform;
+  }
   return obj_cp
 }
 
