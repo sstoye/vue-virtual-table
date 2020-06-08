@@ -159,6 +159,8 @@ Here is a complex example and you can get more info in the tables below the exam
 | ------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------- |
 | prop         | String  | Property name                                                                                                                           | Yes      |                           |
 | name         | String  | Display name                                                                                                                            | No       | same to the property name |
+| slot         | String  | Slot name                                                                                                                           | No      |                           |
+| transform         | Function  | Transform data function                                                                                                                           | No      |                           |
 | width        | Number  | Column width                                                                                                                            | No       | auto                      |
 | sortable     | Boolean | Whether this column is sortable                                                                                                         | No       | false                     |
 | searchable   | Boolean | Whether this column is searchable                                                                                                       | No       | false                     |
