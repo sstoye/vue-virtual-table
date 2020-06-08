@@ -347,7 +347,7 @@
               @click="handleClickItem(props.item)"
               :class="{
                 selected: props.item._eSelected,
-                active: props.item._eTag == this.selectedTag,
+                active: props.item._eTag == selectedTag,
                 unselectable: !selectable,
                 'item-line-allow-hightlight': hoverHighlight
               }"
