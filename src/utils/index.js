@@ -39,13 +39,21 @@ export function JSONtoCSV(arr, columns, delimiter = ',') {
   ].join('\n')
 }
 
-export function deepCopy(obj) {
-  let obj_cp = JSON.parse(JSON.stringify(obj))
-  // keep transform functions
-  if(obj.transform) {
-    obj_cp.transform = transform;
+export function deepCopy(inObject) {
+  let outObject, value, key
+
+  if (typeof inObject !== "object" || inObject === null) {
+    return inObject 
   }
-  return obj_cp
+
+  outObject = Array.isArray(inObject) ? [] : {}
+
+  for (key in inObject) {
+    value = inObject[key]
+    outObject[key] = deepCopy(value)
+  }
+
+  return outObject
 }
 
 export function debounce(fun, t = 0) {
